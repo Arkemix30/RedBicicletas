@@ -15,7 +15,7 @@ bicicleta.add = function (abici){
 }
 
 bicicleta.findById = function(abiciID){
-    var aBici = bicicleta.allbicis.find(x => x.if == abiciID);
+    var aBici = bicicleta.allbicis.find(x => x.id == abiciID);
     if (aBici)
         return aBici;
     else
@@ -23,8 +23,8 @@ bicicleta.findById = function(abiciID){
 }
 
 bicicleta.removeById = function(abiciID){
-    for(var i=0; i<bicicleta.allbicis.length;i++){
-        if(bicicleta.allbicis[i]==abiciID){
+    for(var i=0; i < bicicleta.allbicis.length; i++){
+        if (bicicleta.allbicis[i].id == abiciID){
             bicicleta.allbicis.splice(i,1);
             break;
         }

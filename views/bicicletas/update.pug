@@ -1,0 +1,37 @@
+extends ../layout
+
+block content
+    .jumbotron
+        .row.justify-content-center
+            h1 Actualizar Bicicleta
+    .container
+        .container#nb
+            form(action=`/bicicletas/${bici.id}/update` method='post')
+                .row
+                    .col-6
+                        .form-group
+                            label(for='id') ID:
+                            input#id.form-control(type='text' name='id' value=bici.id)
+                    .col-6
+                        .form-group
+                            label(for='color') Color:
+                            input#color.form-control(type='text' name='color' value=bici.color)
+                    .col-6
+                        .form-group
+                            label(for='modelo') Modelo:
+                            input#modelo.form-control(type='text' name='modelo' value=bici.modelo)
+                    .col-6
+                        .form-group
+                            label(for='lat') Latitud:
+                            input#lat.form-control(type='text' name='lat' value=bici.ubicacion[0])
+                .row.justify-content-end
+                    .col-6.align-self-end
+                        .form-group
+                            label(for='lng') Longitud:
+                            input#lng.form-control(type='text' name='lng' value=bici.ubicacion[1])
+                .row.justify-content-center
+                    .col-6
+                        input.btn.btn-success#guardar(type="submit", value="Guardar")
+        .container
+            .row.justify-content-end
+                    a.btn.btn-primary(href="/bicicletas") Volver
