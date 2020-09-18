@@ -9,7 +9,7 @@ exports.bicicleta_create_get = function(req,res){
 }
 
 exports.bicicleta_create_post = function(req,res){
-    var bici = new bicicleta(req.body.id, req.body.color, req.body.modelo);
+    let bici = new bicicleta(req.body.id, req.body.color, req.body.modelo);
     bici.ubicacion = [req.body.lat, req.body.lng];
     bicicleta.add(bici);
 
@@ -23,12 +23,12 @@ exports.bicicleta_delete_post = function(req,res){
 }
 
 exports.bicicleta_update_get = function(req,res){
-    var bici = bicicleta.findById(req.params.id);
+    let bici = bicicleta.findById(req.params.id);
     res.render('bicicletas/update', {bici});
 }
 
 exports.bicicleta_update_post = function(req,res){
-    var bici = new bicicleta(req.body.id, req.body.color, req.body.modelo);
+    let bici = new bicicleta(req.body.id, req.body.color, req.body.modelo);
     bici.id = req.body.id;
     bici.color = req.body.color;
     bici.modelo = req.body.modelo;

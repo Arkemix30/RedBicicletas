@@ -8,3 +8,14 @@ L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 L.control.scale().addTo(mymap);
 L.marker([12.12804, -86.26485], { draggable: true }).addTo(mymap);
+
+// $.ajax({
+//   dataType: "json",
+//   url:"api/bicicletas",
+//   success: function(result){
+//     console.log(result);
+//     result.bicicletas.forEeach(function(bici){
+//       L.marker(bici.ubicacion,{title: bici.id}, { draggable: true }).addTo(mymap);
+//     });
+//   }
+// })
